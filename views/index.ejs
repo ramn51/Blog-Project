@@ -1,0 +1,22 @@
+<% include ./partials/header.ejs %>
+   
+<div class="row">
+        <div class="col-sm-6 col-md-3">
+            
+                
+                     <% posts.forEach(function(post){ %>
+                        <div class="thumbnail">
+                        <div class="caption">
+                        <h4> <a href="/blogs/<%=post._id%>"> <%=post.title%></a></h4> 
+                            <img src="<%= post.image%> " alt="image not uploaded" >
+                            <p><%=post.content%></p>
+                            <h6><%=post.created.toDateString()%></h6>
+                            
+                        </div>
+                    </div>
+                    <% }) %>
+                
+            
+        </div>
+</div>
+<% include ./partials/footer.ejs %>
