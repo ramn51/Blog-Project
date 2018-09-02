@@ -1,22 +1,47 @@
 <% include ./partials/header.ejs %>
-   
-<div class="row">
-        <div class="col-sm-6 col-md-3">
-            
-                
-                     <% posts.forEach(function(post){ %>
-                        <div class="thumbnail">
-                        <div class="caption">
-                        <h4> <a href="/blogs/<%=post._id%>"> <%=post.title%></a></h4> 
-                            <img src="<%= post.image%> " alt="image not uploaded" >
-                            <p><%=post.content%></p>
-                            <h6><%=post.created.toDateString()%></h6>
-                            
-                        </div>
-                    </div>
-                    <% }) %>
-                
-            
-        </div>
-</div>
-<% include ./partials/footer.ejs %>
+
+        <header class="container">
+                <section class="banner">
+                        <h1 class="banner__heading"><i class="fas fa-chalkboard"></i> Welcome To <br> My Blog </h1>
+                </section>
+        </header>
+        
+        <main class="container">
+                <section class="gallery">
+                        <% posts.forEach(function(post,ind){ %>
+                                <% if(ind === 0) { %>
+                                        <section class="gallery__lead">
+                                                <header>
+                                                        <a class="gallery__lead__title" href="/blogs/<%=post._id%>"><%=post.title%></a>
+                                                        <p class="time-stamp-big"><small><%=post.created.toDateString()%></small></p>
+                                                </header>
+                                                <img class="gallery__lead__image" src="<%= post.image%> " alt="image not uploaded">
+                                                <p class="gallery__lead__description">
+                                                        <%=post.content.substring(0,400)%>
+                                                </p>
+
+                                        </section>
+
+                                        <% } else {%>
+
+                                                <section class="gallery__item">
+                                                        <header>
+                                                                <a class="gallery__item__title" href="/blogs/<%=post._id%>"><%=post.title%></a>
+                                                                <p class="time-stamp"><small><%=post.created.toDateString()%></small></p>
+                                                        </header>
+                                                        <img class="gallery__item__image" src="<%= post.image%> " alt="image not uploaded">
+                                                        <p class="gallery__item__description">
+                                                                <%=post.content.substring(0,100)%>
+                                                        </p>
+
+                                                </section>
+                                                <% }%>
+                                                        <% }) %>
+                </section>
+        </main>
+        <nav class="sorting__aids">
+                        <a href="#">Sort By Date</a>
+                        <a href="#">Sort By Popularity</a>
+                        <a href="#">Sort By Topic</a>
+        </nav>
+        <% include ./partials/footer.ejs %>

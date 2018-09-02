@@ -1,13 +1,20 @@
 <%include ./partials/header%>
 
-    <h1><%=post.title%></h1>
-    <img src="<%=post.image%>" alt="">
-    <h2><%=post.content%></h2>
+    <section class="detailed__view">
+        
+        <h1 class="post__title"><%=post.title%></h1>
+        <img class="post__image" src="<%=post.image%>" alt="">
+        <h2 class="post__content"><%=post.content%></h2>
 
-    <a class="btn btn-warning" href="/blogs/<%=post._id%>/edit">Edit</a>
+        <footer class="button__bar">
+            <a class="button button__edit" href="/blogs/<%=post._id%>/edit">Edit</a>
     
-    <form action="/blogs/<%=post._id%>?_method=DELETE" method="POST">
-        <button class="btn btn-danger">Delete</button>
-    </form>
+            <form action="/blogs/<%=post._id%>?_method=DELETE" method="POST">
+                <button class="button button__delete">Delete</button>
+            </form>
+
+        </footer>
+
+    </section>
 
 <% include ./partials/footer%>

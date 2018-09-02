@@ -1,80 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <link href="/framework.css" rel="stylesheet">
     <title>Blog App</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">  </head>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-    <!-- Semaintic ui  -->
-    <link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css">
-    <script
-    src="https://code.jquery.com/jquery-3.1.1.min.js"
-    integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
-    crossorigin="anonymous"></script>
-    <script src="semantic/dist/semantic.min.js"></script>
-
-
-    <style> 
-        form{
-            width: 450px;
-            margin: 0 auto;
-            margin-top: 20px;
-            color: black;
-            /*border: black 1px solid; 
-            border-radius: 5px;*/
-            overflow: hidden;
-            padding: auto;
-           
-        }
-        
-       .form-control{
-           width: 450px;
-           align-content: center;
-       }
-
-       #newTitle{
-           margin-left:400px;
-       }
-       
-        .thumbnail img {
-        max-height:100%;
-        max-width: 100%;
-        }
-        
-        .navbar{
-            background-color:darkred;
-            color: white; 
-        }
-    
-
-    </style> 
-
 </head>
+
 <body>
-   <div class="container">
-
-        <nav class="navbar navbar-inverse">
-                <div class="container-fluid">
-                  <div class="navbar-header">
-                    <a class="navbar-brand" href="/blogs">BlogApp</a>
-                  </div>
-                  <ul class="nav navbar-nav">
-                    <li><a href="/blogs">Posts</a></li>
-                    <li><a href="/blogs/new">New</a></li>
-                  </ul>
-
-                  <ul class="nav navbar-nav navbar-right">
-                        <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-                        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-                      </ul>
-
-                </div>
-              </nav>
-    
+        <nav class="navbar">
+            <a class="navbar__link navbar__brand" href="/blogs">BlogApp</a>
+            <a class="navbar__link" href="/blogs"><i class="fas fa-newspaper"></i> Posts</a>
+            <a class="navbar__link" href="/blogs/new"><i class="fas fa-columns"></i> New</a>
+            <a class="navbar__link navbar__link-right" href="#"><i class="fas fa-user-plus"></i> Sign Up</a>
+            <a class="navbar__link" href="#"><i class="fas fa-sign-in-alt"></i> Login</a>
+        </nav>
         
-              
-   
