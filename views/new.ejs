@@ -1,31 +1,15 @@
 
 <% include ./partials/header.ejs%>
 
-  <div class="container">
-    <h1 id="newTitle"> Create new Blog</h1>
-      <form  class="form-group" action="/blogs" method="POST">
-        <div class="field">
-        <Label id="title">Title:</Label>
-        <input class="form-control" type="text"  name='blog[title]' placeholder="enter the title">
-        </div>  
-        <br>
-        <div class="field">
-        <Label id="Image">Image URL:</Label>
-        <input class="form-control" type="text" name='blog[image]' placeholder="enter the image url">
-        </div>
-        <br>
-        <div class="field">
-        <Label id="Content">Content:</Label>
-        <textarea class="form-control" name="blog[content]" cols="30" rows="10"></textarea>
-        </div>
-        <br>
-        <button class="btn btn-success">Publish</button>
-
-      </form>
+<section class="container pad1">
+  <h1 class="form__caption"> Create new Blog</h1>
+  <form  class="form__container" action="/blogs" method="POST">
+    <input type="text"  name='blog[title]' placeholder="Title">
+    <input type="text" name='blog[image]' placeholder="Image URL">
+    <textarea name="blog[content]" cols="30" rows="10" placeholder="Write Content Here "></textarea>
+    <button class="form__button-submit"><i class="fas fa-chevron-circle-right"></i> Publish</button>
+  </form>
+</section>
     
-    </div> 
-  </div> 
-
-</div> 
 
 <% include ./partials/footer%>

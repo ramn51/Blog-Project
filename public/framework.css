@@ -1,0 +1,539 @@
+
+@import url('https://fonts.googleapis.com/css?family=Raleway:100,200,300,400');
+* {
+    margin:0;
+    padding:0;
+}
+
+body{
+    font-family: 'Raleway', sans-serif;
+    font-weight: 300;
+    background-color:dodgerblue;
+}
+
+.fa-bars{
+    display:none;
+}
+/*Generic Classes*/
+
+.container{
+    display:grid;
+    grid-template-columns:repeat(18,1fr);
+}
+
+
+
+.navbar {
+    box-sizing:border-box;
+    display:flex;
+    flex-wrap:wrap;
+    align-items: center;
+    padding:0.5rem;
+    height:3.5rem;
+    background-color:#212121;
+    box-shadow: 0px 2px 5px 0px rgba(60, 200, 113,1);
+}
+
+.navbar__link:link,
+.navbar__link:visited,
+.navbar__link:hover,
+.navbar__link:active {
+    text-decoration:none;
+    padding:0rem 0.5rem;
+    text-transform: uppercase;
+    letter-spacing:0.050rem;
+    color:whitesmoke;
+    font-size:1.1rem;
+}
+
+
+.navbar__link:hover,
+.navbar__link:active {
+    color:dodgerblue;
+    font-weight:bold;
+}
+
+
+    
+
+.navbar__link-right{
+    margin-left:auto;
+}
+
+.navbar__brand:link,
+.navbar__brand:visited,
+.navbar__brand:hover,
+.navbar__brand:active{
+    display:inline-block;
+    line-height:2rem;
+    height:2rem;
+    padding:0rem 1rem;
+    margin:0rem 0.5rem;
+    background: linear-gradient(to left, #4fff5a, #2ff403);
+    color:black;
+    border-radius:5rem;
+    font-weight:300;
+}
+
+
+.banner{
+    display:grid;
+    grid-column:1 / -1;
+    padding:2rem 1rem;
+    color:whitesmoke;
+    background-color:rgb(60, 179, 113);
+    grid-template-columns: repeat(16,1fr);
+}
+
+.banner__heading{
+    grid-column: 1 / -1;
+    font-weight: 300;
+    text-transform: uppercase;
+    box-sizing: border-box;
+    font-size:3rem;
+    padding:2rem;
+}
+
+/*
+    Gallery Layout : 
+    Consisting of one lead element (gallery__lead), 
+    rest normal element (gallery__item)
+*/
+
+.gallery{
+    grid-column: 1 / -1;
+    display:grid;
+    margin-bottom:2rem;
+    grid-template-columns: repeat(18,1fr);
+    grid-template-rows:repeat(12,1fr);
+    grid-gap:1rem;
+    padding:4rem 2rem;
+    background-color:dodgerblue;
+    border-radius:0.125rem;
+}
+
+.gallery__item{
+    box-sizing:border-box;
+    grid-column:span 6;
+    grid-row:span 6;
+    padding:1rem;
+    background-color:white;
+    box-shadow: 0px 0px 4px black;
+    border-radius: 0.125rem;
+}
+
+
+.gallery__item__title{
+    padding:1rem 0rem;
+    font-size:1.5rem;
+    font-weight:400;
+    text-transform:uppercase;
+    text-decoration:none;
+}
+
+.gallery__item__image{
+    box-sizing: border-box;
+    margin:1rem auto;
+    width:100%;
+    box-shadow: 0px 0px 4px black;
+}
+
+.gallery__item__description{
+    padding:0.5rem 0rem;
+    text-transform: uppercase;
+}
+
+
+
+/*  Lead Element In Gallery Layout 
+    gallery__lead
+*/
+
+
+.gallery__lead{
+    box-sizing:border-box;
+    grid-column:span 12;
+    grid-row:span 12;
+    padding:2rem;
+    background-color:white;
+    box-shadow: 0px 0px 4px black;
+    border-radius: 0.125rem;
+}
+
+.gallery__lead__title{
+    padding:1rem 0rem;
+    font-size:2.5rem;
+    font-weight:400;
+    text-transform:uppercase;
+    text-decoration:none;
+}
+
+.time-stamp-big{
+    font-size:1.3rem;
+    text-transform: uppercase;
+    letter-spacing: 0.125rem;
+}
+
+.gallery__lead__image{
+    box-sizing: border-box;
+    margin:2rem auto;
+    width:100%;
+    box-shadow: 0px 0px 4px black;
+}
+
+.gallery__lead__description{
+    padding:0.5rem 0rem;
+    font-size:1.25rem;
+    text-transform: uppercase;
+}
+
+
+/*
+    Styles for add new blog form.
+*/
+
+.form__caption{
+    margin-top:2.5rem;
+    margin-bottom:0rem;
+    grid-column: 2 / 11;
+    padding:2rem;
+    font-weight: 400;
+    color:white; 
+    background-color:blue;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+}
+.form__container{
+    display:grid;
+    grid-column:2 / 11;
+    box-sizing: border-box;
+    position: relative;
+}
+
+form input, form label, form textarea{
+    box-sizing: border-box;
+    display:block;
+    border:none;
+    border-bottom:1px solid #212121;
+    padding:0.5rem 1rem;
+    font-size:1.4rem;
+    width:100%;    
+    outline:none;
+}
+
+
+
+
+
+form textarea{
+    resize:none;
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+
+}
+
+::placeholder{
+    font-size:1.4rem;
+    font-weight: 300;
+}
+
+.form__button-submit{
+    background-color:white;
+    position: absolute;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    font-weight: 100;
+    font-size:1.2rem;
+    outline:none;
+    border:none;
+    padding:0.75rem 1rem;
+    border-radius: 2rem;
+    text-transform:uppercase;
+    color:black;
+    opacity:0.8;
+}
+
+.form__button-submit:hover{
+    background-color:blue;
+    opacity:1;
+    color:white;
+    transition:background-color 0.3s ease;
+}
+
+
+/* 
+    DashBoard For Arrangment
+*/
+
+
+.sorting__aids{
+    background-color:black;
+    color:white;
+    font-size:1.3rem;
+    padding:0.75rem;
+    width:100%;
+    box-sizing: border-box;
+    display:flex;
+    justify-content:center;
+}
+
+.sorting__aids a {
+    text-decoration:none;
+    text-transform: uppercase;
+    padding:0rem 1rem;
+    color:white;
+}
+
+
+/* Styles for detailed view */
+
+.detailed__view{
+    display:grid;
+    padding:3rem;
+    grid-template-columns:repeat(16,1fr);
+    background-color:white;
+}
+
+.post__title{
+    box-sizing: border-box;
+    grid-column: 1 / 11;
+    margin-top:1rem;
+    padding:1.5rem 1rem;
+    background-color:#212121;
+    color:white;
+    font-weight: 300;
+    font-size:1.8rem;
+    text-transform: uppercase;
+    border-bottom:1px solid whitesmoke;
+}
+
+.post__image{
+    box-sizing:border-box;
+    width:100%;
+    grid-column: 1 / 11;
+}
+
+.post__content{
+    border:1px solid black;
+    grid-column: 1 / 11;
+    padding:1rem 0.5rem;
+    font-weight:300;
+
+    text-transform:uppercase;
+}
+
+
+.button__bar{
+    display:flex;
+    grid-column:1 / 11;
+    padding-top:1rem;
+}
+
+.button{
+    box-sizing: border-box;
+    padding:0.5rem 1rem;
+    font-weight: 400;
+    font-family: 'Raleway', sans-serif;
+    display:inline-block;
+    outline:none;
+    border:none;
+    background-color:white;
+    color:black;
+    text-decoration: none;
+    text-align:center;
+    font-size:1.3rem;
+    margin-right:1rem;
+    border-radius: 5rem;
+}
+
+
+.button__edit{
+    background-color:rebeccapurple;
+    opacity:0.9;
+    color:white;
+}
+
+.button__delete{
+    background-color: red;
+    opacity:0.9;
+    color:white;
+}
+
+/* Styles To Make Page Responsive */
+
+
+@media screen and (max-width:400px){
+
+.navbar__link:link,
+.navbar__link:visited,
+.navbar__link:hover,
+.navbar__link:active {
+    width:100%;
+    padding:0.25rem 1rem;
+    margin:0;
+}
+
+
+.banner__heading{
+    grid-column: 1 / -1;
+    font-weight: 300;
+    text-transform: uppercase;
+    box-sizing: border-box;
+    font-size:2rem;
+    padding:1rem;
+}
+
+.navbar{
+    height:auto;
+    padding:0;
+}
+.navbar__link:last-of-type{
+    padding-bottom:1rem;
+}
+
+.navbar__brand:link,
+.navbar__brand:visited,
+.navbar__brand:hover,
+.navbar__brand:active{
+    display:inline-block;
+    line-height:2rem;
+    height:2rem;
+    border-radius: 0;
+    color:#212121;
+    font-size:1.3rem;
+    font-weight: 400;
+    padding:0.5rem 1rem;
+    margin-bottom:1rem;
+}
+
+
+/* styles for add new post */
+
+.container{
+    
+}
+.form__caption{
+    margin-top:2.5rem;
+    margin-bottom:0rem;
+    grid-column: 1 / -1;
+    padding:2rem;
+    border-radius:0rem;
+}
+.form__container{
+    display:grid;
+    grid-column:1 / -1;
+    box-sizing: border-box;
+    position: relative;
+}
+
+form input, form label, form textarea{
+    padding:0.5rem 1rem;
+    font-size:1.2rem;
+    border-radius:0rem;
+}
+
+
+::placeholder{
+    font-size:1.2rem;
+}
+
+.form__button-submit{
+    font-size:1rem;
+    position: unset;
+    background-color:blue;
+    opacity:0.9;
+    width:100%;
+    border-radius:0.25rem;
+    color:white;
+    margin-bottom:1rem;
+}
+
+.form__button-submit:hover{
+    transition:none;
+}
+
+
+/* Styles for gallery layout*/
+
+.gallery{
+    padding:4rem 1rem;
+}
+
+.gallery__item{
+    grid-column:1 / -1;
+}
+
+
+.gallery__item__title{
+    padding:1rem 0rem;
+    font-size:1.5rem;
+    font-weight:400;
+    text-transform:uppercase;
+    text-decoration:none;
+}
+
+.gallery__item__image{
+    box-sizing: border-box;
+    margin:1rem auto;
+    width:100%;
+    box-shadow: 0px 0px 4px black;
+}
+
+.gallery__item__description{
+    padding:0.5rem 0rem;
+    text-transform: uppercase;
+}
+
+
+
+/*  Lead Element In Gallery Layout 
+    gallery__lead
+*/
+
+
+.gallery__lead{
+    grid-column: 1 / -1;
+    grid-row:span 6;
+    padding:1rem;
+}
+
+.gallery__lead__title{
+    padding:1rem 0rem;
+    font-size:1.5rem;
+}
+
+.time-stamp-big{
+    font-size:1rem;
+}
+
+.gallery__lead__image{
+    margin:1rem auto;
+}
+
+.gallery__lead__description{
+    font-size:1rem;
+}
+
+.pad1{
+    padding:1rem;
+}
+
+.sorting__aids{
+    flex-wrap: wrap;
+}
+.sorting__aids a {
+    display:block;
+    width:100%;
+    padding:0.25rem 1rem;
+    font-size: 1rem;
+}
+
+.fa-bars{
+    display: initial;
+}
+
+.hidden{
+    display:none;
+}
+
+}
