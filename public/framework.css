@@ -132,10 +132,11 @@ body{
 }
 
 .gallery__item__image{
-    box-sizing: border-box;
-    margin:1rem auto;
+    height:176px;
     width:100%;
-    box-shadow: 0px 0px 4px black;
+    background-position: top !important;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
 }
 
 .gallery__item__description{
@@ -179,6 +180,10 @@ body{
     margin:2rem auto;
     width:100%;
     box-shadow: 0px 0px 4px black;
+    height:20rem;
+    background-position: top !important;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
 }
 
 .gallery__lead__description{
@@ -508,6 +513,7 @@ form input, form label, form textarea{
 
 .gallery__lead__image{
     margin:1rem auto;
+    height:11rem;
 }
 
 .gallery__lead__description{

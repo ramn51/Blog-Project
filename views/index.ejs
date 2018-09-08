@@ -15,7 +15,7 @@
                                                         <a class="gallery__lead__title" href="/blogs/<%=post._id%>"><%=post.title%></a>
                                                         <p class="time-stamp-big"><small><%=post.created.toDateString()%></small></p>
                                                 </header>
-                                                <img class="gallery__lead__image" src="<%= post.image%> " alt="image not uploaded">
+                                                <div style="background:url('<%= post.image%>');" class="gallery__lead__image"></div>
                                                 <p class="gallery__lead__description">
                                                         <%=post.content.substring(0,400)%>
                                                 </p>
@@ -29,7 +29,7 @@
                                                                 <a class="gallery__item__title" href="/blogs/<%=post._id%>"><%=post.title%></a>
                                                                 <p class="time-stamp"><small><%=post.created.toDateString()%></small></p>
                                                         </header>
-                                                        <img class="gallery__item__image" src="<%= post.image%> " alt="image not uploaded">
+                                                        <div style="background:url('<%= post.image%>');" class="gallery__item__image"></div>
                                                         <p class="gallery__item__description">
                                                                 <%=post.content.substring(0,100)%>
                                                         </p>
