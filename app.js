@@ -133,7 +133,7 @@ app.put("/blogs/:id",function(req,res){
     })
 })
 //delete post 
-app.delete("blogs/:id",function(req,res){
+app.delete("/blogs/:id",function(req,res){
     Post.findByIdAndRemove(req.params.id,function(err){
         if(err){
             

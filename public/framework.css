@@ -14,14 +14,13 @@ body{
 .fa-bars{
     display:none;
 }
+
 /*Generic Classes*/
 
 .container{
     display:grid;
     grid-template-columns:repeat(18,1fr);
 }
-
-
 
 .navbar {
     box-sizing:border-box;
@@ -106,7 +105,7 @@ body{
     margin-bottom:2rem;
     grid-template-columns: repeat(18,1fr);
     grid-template-rows:repeat(12,1fr);
-    grid-gap:1rem;
+    grid-gap:1.25rem;
     padding:4rem 2rem;
     background-color:dodgerblue;
     border-radius:0.125rem;
@@ -132,7 +131,7 @@ body{
 }
 
 .gallery__item__image{
-    height:176px;
+    height:13rem;
     width:100%;
     background-position: top !important;
     background-size: cover !important;
@@ -180,7 +179,7 @@ body{
     margin:2rem auto;
     width:100%;
     box-shadow: 0px 0px 4px black;
-    height:20rem;
+    height:24rem;
     background-position: top !important;
     background-size: cover !important;
     background-repeat: no-repeat !important;
@@ -213,6 +212,7 @@ body{
     grid-column:2 / 11;
     box-sizing: border-box;
     position: relative;
+    margin-bottom:2rem;
 }
 
 form input, form label, form textarea{
@@ -241,6 +241,8 @@ form textarea{
     font-size:1.4rem;
     font-weight: 300;
 }
+
+
 
 .form__button-submit{
     background-color:white;
@@ -362,12 +364,210 @@ form textarea{
     background-color: red;
     opacity:0.9;
     color:white;
+    cursor: pointer;
 }
+
+
+.form__edit__label{
+    background-color:darkorchid;
+    color:white;
+    font-weight: normal;
+}
+
+/* Responsiveness Part 2*/
+
+@media screen and (max-width:1000px){
+
+    .navbar__link:link,
+    .navbar__link:visited,
+    .navbar__link:hover,
+    .navbar__link:active {
+        width:100%;
+        padding:0.25rem 1rem;
+        margin:0;
+    }
+    
+    
+    .banner__heading{
+        grid-column: 1 / -1;
+        font-weight: 300;
+        text-transform: uppercase;
+        box-sizing: border-box;
+        font-size:2rem;
+        padding:1rem;
+    }
+    
+    .navbar{
+        height:auto;
+        padding:0;
+    }
+    .navbar__link:last-of-type{
+        padding-bottom:1rem;
+    }
+    
+    .navbar__brand:link,
+    .navbar__brand:visited,
+    .navbar__brand:hover,
+    .navbar__brand:active{
+        display:inline-block;
+        line-height:2rem;
+        height:2rem;
+        border-radius: 0;
+        color:#212121;
+        font-size:1.3rem;
+        font-weight: 400;
+        padding:0.5rem 1rem;
+        margin-bottom:1rem;
+    }
+    
+    
+    /* styles for add new post */
+    
+    .container{
+        
+    }
+    .form__caption{
+        margin-top:2.5rem;
+        margin-bottom:0rem;
+        grid-column: 1 / -1;
+        padding:2rem;
+        border-radius:0rem;
+    }
+    .form__container{
+        display:grid;
+        grid-column:1 / -1;
+        box-sizing: border-box;
+        position: relative;
+    }
+    
+    form input, form label, form textarea{
+        padding:0.5rem 1rem;
+        font-size:1.2rem;
+        border-radius:0rem;
+    }
+    
+    
+    
+    
+    ::placeholder{
+        font-size:1.2rem;
+    }
+    
+    .form__button-submit{
+        font-size:1rem;
+        position: unset;
+        background-color:blue;
+        opacity:0.9;
+        width:100%;
+        border-radius:0.25rem;
+        color:white;
+        margin-bottom:1rem;
+    }
+    
+    .form__button-submit:hover{
+        transition:none;
+    }
+    
+    
+    /* Styles for gallery layout*/
+    
+    .gallery{
+        padding:3rem 1rem;
+        grid-gap:1rem;
+    }
+    
+    .gallery__item{
+        grid-column:span 9;
+        grid-row:span 3;
+    }
+    
+    
+    .gallery__item__title{
+        padding:1rem 0rem;
+        font-size:1.5rem;
+        font-weight:400;
+        text-transform:uppercase;
+        text-decoration:none;
+    }
+    
+    .gallery__item__image{
+        box-sizing: border-box;
+        margin:1rem auto;
+        width:100%;
+        height:15rem;
+        box-shadow: 0px 0px 4px black;
+    }
+    
+    .gallery__item__description{
+        padding:0.5rem 0rem;
+        text-transform: uppercase;
+    }
+    
+    
+    
+    /*  Lead Element In Gallery Layout 
+        gallery__lead
+    */
+    
+    
+    .gallery__lead{
+        grid-column: 1 / -1;
+        grid-row:span 4;
+        padding:1rem;
+    }
+    
+    .gallery__lead__title{
+        padding:1rem 0rem;
+        font-size:1.5rem;
+    }
+    
+    .time-stamp-big{
+        font-size:1rem;
+    }
+    
+    .gallery__lead__image{
+        margin:1rem auto;
+        height:25rem;
+    }
+    
+    .gallery__lead__description{
+        font-size:1rem;
+    }
+    
+    .pad1{
+        padding:1rem;
+    }
+    
+    .sorting__aids{
+        flex-wrap: wrap;
+    }
+    .sorting__aids a {
+        display:block;
+        width:100%;
+        padding:0.25rem 1rem;
+        font-size: 1rem;
+    }
+    
+    .fa-bars{
+        display: initial;
+    }
+    
+    .hidden{
+        display:none;
+    }
+    
+    }
+
 
 /* Styles To Make Page Responsive */
 
 
-@media screen and (max-width:400px){
+@media screen and (max-width:756px){
+
+
+    .navbar,.container,.sorting__aids{
+        min-width: 400px;     
+    }
 
 .navbar__link:link,
 .navbar__link:visited,
@@ -414,9 +614,6 @@ form textarea{
 
 /* styles for add new post */
 
-.container{
-    
-}
 .form__caption{
     margin-top:2.5rem;
     margin-bottom:0rem;
@@ -436,6 +633,8 @@ form input, form label, form textarea{
     font-size:1.2rem;
     border-radius:0rem;
 }
+
+
 
 
 ::placeholder{
@@ -461,13 +660,14 @@ form input, form label, form textarea{
 /* Styles for gallery layout*/
 
 .gallery{
+    display:flex;
+    flex-wrap: wrap;
     padding:4rem 1rem;
 }
 
-.gallery__item{
-    grid-column:1 / -1;
+.gallery__item, .gallery__lead{
+    margin-bottom:1rem;
 }
-
 
 .gallery__item__title{
     padding:1rem 0rem;
@@ -496,11 +696,7 @@ form input, form label, form textarea{
 */
 
 
-.gallery__lead{
-    grid-column: 1 / -1;
-    grid-row:span 6;
-    padding:1rem;
-}
+
 
 .gallery__lead__title{
     padding:1rem 0rem;
@@ -513,7 +709,7 @@ form input, form label, form textarea{
 
 .gallery__lead__image{
     margin:1rem auto;
-    height:11rem;
+    height:13rem;
 }
 
 .gallery__lead__description{
