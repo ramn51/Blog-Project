@@ -24,7 +24,7 @@ app.get("/blogs", function (req, res) {
             console.log(err);
         } else {
             console.log(post);
-            res.render("index", {
+            res.render("Post/index", {
                 posts: post
             });
         }
@@ -34,7 +34,7 @@ app.get("/blogs", function (req, res) {
 
 //render new form
 app.get("/blogs/new", function (req, res) {
-    res.render("new");
+    res.render("Post/new");
 })
 
 //Create post - post request to post to create a post 
@@ -45,7 +45,7 @@ app.post("/blogs", function (req, res) {
     Post.create(req.body.blog, function (err, post) {
 
         if (err) {
-            res.render("new");
+            res.render("Post/new");
             console.log(err);
         } else {
             console.log("succesfful post in");
@@ -75,8 +75,10 @@ app.get("/blogs/:id", function (req, res) {
             console.log(err);
             res.redirect("/blogs");
         } else {
-            console.log(data);
-            res.render("show",{post:data});
+            console.log('found post');
+            res.render("Post/show", {
+                post: data
+            });
         }
     })
 
@@ -92,7 +94,7 @@ app.get("/blogs/:id/edit", function (req, res) {
             res.redirect("/blogs");
         } else {
             console.log(post);
-            res.render("edit", {
+            res.render("Post/edit", {
                 post: post
             });
         }
@@ -127,13 +129,14 @@ app.delete("blogs/:id", function (req, res) {
 
 //====Comments routes=====
 
+//Comment Creation
 app.get("/blogs/:id/comment/new", function (req, res) {
     Post.findById(req.params.id, function (err, post) {
         if (err) {
             console.log(err);
             res.redirect("/blogs");
         } else {
-            res.render("comment", {
+            res.render("Comment/new", {
                 post: post
             });
         }
@@ -160,6 +163,45 @@ app.post("/blogs/:id/comment", function (req, res) {
         }
     })
 })
+
+//Comment Edit==
+app.get("/blogs/:id/comment/:comment_id/edit", function (req, res) {
+    Comments.findById(req.params.comment_id, function (err, comment) {
+        if (err) {
+            console.log(err);
+            res.redirect("/blogs/" + req.params.id);
+        } else {
+            console.log(comment);
+            res.render("Comment/edit", {
+                post_id: req.params.id,
+                comment: comment
+            });
+        }
+    })
+})
+
+app.put("/blogs/:id/comment/:comment_id", function (req, res) {
+    Comments.findByIdAndUpdate(req.params.comment_id, req.body.Comment, function (err, comment) {
+        if (err) {
+            console.log(err);
+            res.redirect("/blogs/" + req.params.id);
+        } else {
+            console.log('comment found and updated\n' + comment);
+            res.redirect("/blogs/" + req.params.id);
+        }
+    })
+})
+
+//Comment Delete === (To be used after designing)
+
+// app.delete("/blogs/:id/comment/:comment_id",function(req,res){
+//     Comments.findByIdAndRemove(req.param.comment_id,function(err){
+//         if(err)
+//             {console.log(err); res.redirect("/blogs/"+req.params.id);}
+//         else
+//             console.log('comment deleted');
+//     })
+// })
 
 
 
