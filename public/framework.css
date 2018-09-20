@@ -389,6 +389,8 @@ form textarea{
     font-size:1.2rem;
     margin:1rem 0rem;
     padding:1rem;
+    padding-bottom:2rem;
+    border-radius:0.125rem;
     position: relative;
     
 }
@@ -404,7 +406,7 @@ form textarea{
     box-sizing: border-box;
     display:grid;
     margin:0rem 1rem;
-    grid-template-columns:4rem 1fr;
+    grid-template-columns:4rem 5fr 1fr;
 }
 
 .fa-user-circle{
@@ -437,6 +439,33 @@ form textarea{
     grid-gap:0.5rem;
 }
 
+.comment__ops{
+    margin-left:auto;
+    box-sizing: border-box;
+    font-size:1rem;
+    padding:0.25rem;
+    font-style:bold;
+}
+
+.comment__ops button{
+    display:block;
+    margin:0.30rem .25rem;
+    color:white;
+    cursor: pointer;
+    border:none;outline:none;
+    background-color:transparent;
+}
+
+
+.comment__ops .delete__comment{
+    color:red;
+    font-weight:700;
+}
+
+.comment__ops .edit__comment{
+    color:dodgerblue;
+    font-weight:700;
+}
 /* Responsiveness Part 2*/
 
 @media screen and (max-width:1000px){

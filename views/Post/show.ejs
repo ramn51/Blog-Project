@@ -32,6 +32,15 @@
                         <h3 class="comment__author"><%=data.author%></h3>
                         <p class="comment__content"><%=data.text%></p>
                     </div>
+                    <div class="comment__ops">
+                        <form action="/blogs/<%=post._id%>/comment/<%=data._id%>/edit" method="GET">
+                            <button class="edit__comment"><i class="fas fa-edit"></i> Edit</button>
+                        </form>
+                        <form action="/blogs/<%=post._id%>/comment/<%=data._id%>?_method=DELETE" method="POST">
+                            <button class="delete__comment"><i class="fas fa-times-circle"></i> Delete</button>
+                        </form>    
+                        
+                    </div>
                 </div>    
             <%})%>
             
