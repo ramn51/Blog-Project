@@ -114,17 +114,10 @@ app.put("/blogs/:id", function (req, res) {
     })
 })
 //delete post 
-<<<<<<< HEAD
-app.delete("/blogs/:id",function(req,res){
-    Post.findByIdAndRemove(req.params.id,function(err){
-        if(err){
-            
-=======
 app.delete("blogs/:id", function (req, res) {
     Post.findByIdAndRemove(req.params.id, function (err) {
         if (err) {
 
->>>>>>> 0fa848447de8ac6a6324b16070d3933d24cf6f0d
             res.redirect("/blogs");
             console.log(err);
         } else {

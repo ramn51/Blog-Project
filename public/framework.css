@@ -354,6 +354,11 @@ form textarea{
 }
 
 
+.button__comment{
+    background-color:mediumseagreen;
+    color:white;
+}
+
 .button__edit{
     background-color:rebeccapurple;
     opacity:0.9;
@@ -372,6 +377,64 @@ form textarea{
     background-color:darkorchid;
     color:white;
     font-weight: normal;
+}
+
+/* Comments Section */
+
+
+.comments{
+    grid-column: 1 / 11;
+    background-color:#002;
+    color:white;
+    font-size:1.2rem;
+    margin:1rem 0rem;
+    padding:1rem;
+    position: relative;
+    
+}
+
+.comments__head{
+    text-transform: uppercase;
+    padding:1rem 1rem;
+    font-weight: 400;
+    letter-spacing: 0.050rem;
+}
+
+.comments__body{
+    box-sizing: border-box;
+    display:grid;
+    margin:0rem 1rem;
+    grid-template-columns:4rem 1fr;
+}
+
+.fa-user-circle{
+    box-sizing: border-box;
+    padding:1rem;
+    font-size:2rem;
+}
+
+.comment__author{
+    padding-top:0.25rem;
+    font-weight: 400;
+    color:darkturquoise;
+    font-size:1.5rem;
+}
+
+.comment__content{
+    letter-spacing: 0.040rem;
+}
+
+.button__submit{
+    width:100%;
+    border-radius: 0rem;
+    border-bottom:2px solid black;
+    text-transform: uppercase;
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius:1rem;
+}
+
+.comment__form{
+    grid-gap:0.5rem;
 }
 
 /* Responsiveness Part 2*/

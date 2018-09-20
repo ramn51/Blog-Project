@@ -1,10 +1,13 @@
 <%include ../partials/header%>
 
-<form class="form-group" action="/blogs/<%=post._id%>/comment" method="POST">
+<section class="container">
+    <h1 class="form__caption">New Comment</h1>
+    <form class="form__container comment__form" action="/blogs/<%=post._id%>/comment" method="POST">
+        <input type="text" name="Blog[text]" placeholder="Content">
+        <input type="text" name="Blog[author]" placeholder="Author">
+        <button class="button button__submit">add</button>
 
-    <input class="form-control"  type="text" name="Blog[text]" placeholder="content">
-    <input class="form-control"  type="text" name="Blog[author]" placeholder="author">
-    <input class="btn btn-success" type="submit">
-</form>
+    </form>
+</section>
 
 <%include ../partials/footer%>

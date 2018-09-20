@@ -14,35 +14,32 @@
             </form>
 
             <form action="/blogs/<%=post._id%>/comment/new">
-                <button>Add Comment</button>
+                <button class="button button__comment">Add Comment</button>
             </form>
 
         </footer>
 
-    
+        <!-- Comments section  -->
+        <section class="comments">
+            
+            <header>
+                <h2 class="comments__head">Comments</h2>
+            </header>
+            <%post.comments.forEach(function(data){%>
+                <div class="comments__body">
+                    <div class="author__photo"><i class="fa fa-user-circle" aria-hidden="true"></i></div>
+                    <div class="comment">
+                        <h3 class="comment__author"><%=data.author%></h3>
+                        <p class="comment__content"><%=data.text%></p>
+                    </div>
+                </div>    
+            <%})%>
+            
+        </section>
+
 
     </section>
 
-    <!-- Comments section  -->
-    <table>
-        <tr>
-            <th>Author</th>
-            <th>Comment</th>
-        </tr>
-
-  
-    <%post.comments.forEach(function(data){%>
-
-       
-       
-            <tr>
-                <td><strong><%=data.author%></strong></td>
-                <td><em><%=data.text%></em></td>
-            </tr>
     
-
-    <%})%>
-</table>
-   
 
 <% include ../partials/footer%>
