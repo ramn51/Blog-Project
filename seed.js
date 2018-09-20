@@ -1,7 +1,8 @@
 var express = require("express"),
     app     = express(),
     mongoose = require("mongoose"),
-    Post     = require("./models/post");
+    Post     = require("./models/post"),
+    Comments = require("./models/comment");
 
 var data = [
     {
@@ -37,5 +38,9 @@ function seedDB(data){
 
    
 }
+
+
+
+
 
 module.exports = seedDB();

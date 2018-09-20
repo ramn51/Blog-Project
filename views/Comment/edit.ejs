@@ -1,0 +1,10 @@
+<%include ../partials/header%>
+
+<form class="form-group" action="/blogs/<%=post_id%>/comment/<%=comment._id%>?_method=PUT" method="POST">
+
+    <input class="form-control"  type="text" name="Comment[text]" value="<%=comment.text%>">
+    <input class="form-control"  type="text" name="Comment[author]" value="<%=comment.author%>">
+    <input class="btn btn-success" type="submit">
+</form>
+
+<%include ../partials/footer%>

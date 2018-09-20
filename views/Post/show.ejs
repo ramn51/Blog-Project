@@ -1,0 +1,48 @@
+<%include ../partials/header%>
+
+    <section class="detailed__view">
+        
+        <h1 class="post__title"><%=post.title%></h1>
+        <img class="post__image" src="<%=post.image%>" alt="">
+        <h2 class="post__content"><%=post.content%></h2>
+
+        <footer class="button__bar">
+            <a class="button button__edit" href="/blogs/<%=post._id%>/edit">Edit</a>
+    
+            <form action="/blogs/<%=post._id%>?_method=DELETE" method="POST">
+                <button class="button button__delete">Delete</button>
+            </form>
+
+            <form action="/blogs/<%=post._id%>/comment/new">
+                <button>Add Comment</button>
+            </form>
+
+        </footer>
+
+    
+
+    </section>
+
+    <!-- Comments section  -->
+    <table>
+        <tr>
+            <th>Author</th>
+            <th>Comment</th>
+        </tr>
+
+  
+    <%post.comments.forEach(function(data){%>
+
+       
+       
+            <tr>
+                <td><strong><%=data.author%></strong></td>
+                <td><em><%=data.text%></em></td>
+            </tr>
+    
+
+    <%})%>
+</table>
+   
+
+<% include ../partials/footer%>
