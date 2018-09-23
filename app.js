@@ -17,6 +17,7 @@ app.use(bodyParser.urlencoded({
 app.use(methodOverride("_method"));
 //seedDB();
 
+
 //index route - the main page 
 app.get("/blogs", function (req, res) {
     Post.find({}, function (err, post) {
@@ -192,16 +193,19 @@ app.put("/blogs/:id/comment/:comment_id", function (req, res) {
     })
 })
 
-//Comment Delete === (To be used after designing)
+// Comment Delete === (To be used after designing)
 
-// app.delete("/blogs/:id/comment/:comment_id",function(req,res){
-//     Comments.findByIdAndRemove(req.param.comment_id,function(err){
-//         if(err)
-//             {console.log(err); res.redirect("/blogs/"+req.params.id);}
-//         else
-//             console.log('comment deleted');
-//     })
-// })
+app.delete("/blogs/:id/comment/:comment_id",function(req,res){
+    Comments.findByIdAndRemove(req.params.comment_id,function(err){
+        if(err)
+            {   console.log(err); 
+                res.redirect("/blogs/"+req.params.id);}
+        else{
+            console.log('comment deleted');
+            console.log(err); res.redirect("/blogs/"+req.params.id);
+        }
+    })
+})
 
 
 
@@ -209,3 +213,5 @@ app.put("/blogs/:id/comment/:comment_id", function (req, res) {
 app.listen("5000", function (req, res) {
     console.log("server has started");
 })
+
+
